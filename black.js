@@ -1360,7 +1360,7 @@ client.on("message", message => {
   }
 });
 client.on("message", message => {
-  if (message.content.startsWith(prefix + "my perms")) {
+  if (message.content.startsWith(prefix + "perms")) {
     if (!message.channel.guild) return;
     var perms = JSON.stringify(
       message.channel.permissionsFor(message.author).serialize(),
@@ -1793,7 +1793,7 @@ client.on("message", message => {
   }
 });
 client.on("message", message => {
-  if (message.content === prefix + "close") {
+  if (message.content === prefix + "hide") {
     if (!message.channel.guild) return;
     if (!message.member.hasPermission("MANAGE_CHANNELS"))
       return message.reply("You Dont Have Perms `MANAGE CHANNELS` :x:");
@@ -1813,7 +1813,7 @@ client.on("message", message => {
   }
 });
 client.on("message", message => {
-  if (message.content === prefix + "open") {
+  if (message.content === prefix + "show") {
     if (!message.channel.guild) return;
     if (!message.member.hasPermission("MANAGE_CHANNELS"))
       return message.reply("You dont have Perms `MANAGE CHANNELS`:x:");
@@ -1834,7 +1834,7 @@ client.on("message", message => {
 });
 
 client.on("message", message => {
-  if (message.content.startsWith(prefix + "delete")) {
+  if (message.content.startsWith(prefix + "deletechannel")) {
     if (!message.member.hasPermission("MANAGE_CHANNELS"))
       return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
     let args = message.content.split(" ").slice(1);
@@ -1849,7 +1849,7 @@ client.on("message", message => {
 });
 
 client.on("message", message => {
-  if (message.content.startsWith(prefix + "love")) {
+  if (message.content.startsWith(prefix + "couple")) {
     let loves = [
       "https://media.discordapp.net/attachments/608711480346542102/782233713538498600/hit_gif_5.gif",
       "https://media.discordapp.net/attachments/608711480346542102/782286421020508170/image0_1.gif",
@@ -1972,7 +1972,7 @@ client.on("message", message => {
   }
 });
 client.on("message", message => {
-  if (message.content.startsWith(prefix + "man")) {
+  if (message.content.startsWith(prefix + "boy")) {
     let man = [
       "https://media.discordapp.net/attachments/786897044483604490/803870769313480714/Enes_Acar_GIF_70.gif",
       "https://media.discordapp.net/attachments/786897044483604490/803870793716858880/a_57a7f6c875e3a329b170edf177392911.gif",
@@ -2968,7 +2968,7 @@ client.on("message", message => {
 ////////
 
 client.on("message", message => {
-  if (message.content.startsWith(prefix + "invites")) {
+  if (message.content.startsWith(prefix + "ninvites")) {
     if (cooldown.has(message.author.id)) {
       return message.channel
         .send(`:stopwatch: | Please wait for 10 second`)
@@ -3021,7 +3021,7 @@ client.on("message", async message => {
     if (!muterole) {
       try {
         muterole = await message.guild.roles.create({
-          name: "Muted By BlackSestam",
+          name: "Muted","Mute",
           color: "#000000",
           permissions: []
         });
@@ -3387,7 +3387,7 @@ client.on("message", async message => {
 });
 ////////
 client.on("message", message => {
-  if (message.content.startsWith(prefix + "botinfo")) {
+  if (message.content.startsWith(prefix + "about")) {
     var msg = `${Date.now() - message.createdTimestamp}`;
     var api = `${Math.round(client.ping)}`;
     let botembed = new Discord.MessageEmbed()
@@ -3399,7 +3399,7 @@ client.on("message", message => {
       .addField("Servers", `\`${client.guilds.cache.size}\``)
       .addField("Users", `\`${client.users.cache.size}\``)
       .addField("Channels", `\`${client.channels.cache.size}\``)
-      .addField("Devs Bot", `\` <@670647563627659306>\``)
+      .addField("Devs Bot", `\` <@701546840063082601>\``)
       .addField("Version", `\` Version 12.4.0\``)
       .addField("Ping Bot", `\`${msg}ms.\``)
       .addField("Api Bot", `\`${api}ms.\``)
