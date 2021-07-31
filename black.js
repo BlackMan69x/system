@@ -30,14 +30,14 @@ const imdb = require("imdb-api");
 const cooldown = new Set();
 const cdtime = 5;
 const prefix = "+"
-client.login("ODA3MzQxMzI4OTA3MjM5NDc1.YB2lNA.aj8u27c-OZcavJM2E9lj2bh2Bhk")
+client.login("ODA3MzUwNTM0OTAxMDcxOTMy.YB2txw.Vxozb2bo4ReakAhdqtRX5-vg3P0")
 client.on("ready", () => {
   console.log("ALLAH AKBAR");
   console.log("♔♔♔♔♔♔♔♔♔♔♔♔♔♔♔♔♔♔♔");
   console.log(`Logged in as ${client.user.tag}!`);
   console.log("بِسْمِ اللَّـهِ الرَّحْمَـٰنِ الرَّحِيمِ");
     console.log(client.guilds.cache.map(c => `${c.name} : ${c.me.hasPermission(8)} : ${c.memberCount}`));
-  client.user.setActivity( `${prefix}help | BLACK SESTAM VERSION 12.4.0 | SERVERS ${client.guilds.cache.size} | Users ${client.users.cache.size} `);
+  client.user.setActivity( `${prefix}help | Panda Bot VERSION 12.4.0 | SERVERS ${client.guilds.cache.size} | Users ${client.users.cache.size} `);
   console.log(`Logined`);
 });
 
@@ -1102,66 +1102,55 @@ message.channel.send(embed)
 
 client.on("message", async message => {
   if (message.content.startsWith(prefix + "help")) {
-    if (cooldown.has(message.author.id)) {
-      return message.channel
-        .send(`:stopwatch: | **Please wait for ${cdtime} second**`)
-        .then(m => {
-          m.delete({ timeout: cdtime * 600 });
-        });
-    }
-
-    cooldown.add(message.author.id);
-
-    setTimeout(() => {
-      cooldown.delete(message.author.id);
-    }, cdtime * 1000);
+    
     let help = new Discord.MessageEmbed()
-      .setColor("RED")
-      .setAuthor(message.author.username, message.author.displayAvatarURL())
-      .setThumbnail(message.guild.iconURL()).setDescription(`
+      .setColor(``)
+      .setImage(``)
+      .setDescription(`
+**__ Help Commands __**
+
+[Invite Panda](https://discord.com/api/oauth2/authorize?client_id=807350534901071932&permissions=8&scope=bot) - [Support Server](https://discord.gg/vYEN2WDH9s) - [Vote Panda]()
+
+
+ 🌍**»__ Public Commands __ **
+
+\`>uptime - >ping\`
+\`>about - >weather\`
+\`>listbots - >roles\`
+\`>userRole - >support\`
+\`>invite - >listEmoji\`
+\`>report - >ninvites\` 
+\`>perms - >serverinfo\`
+\`>userinfo - >server avatar\`
+\`>avatar - >day\`
+\`>covid all - >covid\` : **[Country]**
+
+⚡️**»__ Moderation __ **
+
+\`>hide - show\`
+\`>ban - >unban \`
+\`>move - >embed\`
+\`>kick - >vkick\`
+\`>mute - >unmute\`
+\`>lock - >unlock\`
+\`>clear - >slowmode\`
+\`>lockall - >unlockall\`
+\`>ENrules - >KRrules - >ARrules\`
+\`>warn - >warning - >removewarn\`
+
+🛡️**»__ Security __**
+
+\`>anti bot\` : **[on-off]**
+\`>anti ban\` : **[Number]**
+\`>anti kick\` : **[Number]**
+\`>anti roleC\` : **[Number]**
+\`>anti roleD\` : **[Number]**
+\`>anti channelC\` : **[Number]**
+\`>anti channelD\` : **[Number]**
+\`>punishment\`
+\`>settings\`
       
-[Click To Invite](https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=2080374975)  
-
-**The Prefix is a (b!)**
-
-**General**
- botinfo,server,ping,invites,boosts,hightRole,nick,user,avatar,roles,emoji,sug,timer,youtube,google,weather,listemojis,my perms,
- covid,my perms,sbot,calc,chinfo,count,guild,date,year,se static <emojiserver>,movie <movie name>
-
-**Moderation**
-ban,kick,mute,unmute,say,embed,tempmute,color,bans,roleinf
-unban,unban all,warn,warnings,lock,unlock,close,open,pin,unpin,rules,settopic,move,help move,delete,mutevoice,unmute voice,
-region
-
-**Config**
-setLevel,setWelcomer,setReponse1,setReponse2,setReponse3,setLog,setAutoRole,setSug,
-toggleLevel [on/off],toggleLeave [on/off],autoreply1 [on/off],autoreply2 [on/off],autoreply3,[on/off],togglelog [on/off],toggleArole [on/off]
-,toggleSug [on/off],infosetLevel,infoAutoRole,infoSug,infoWelcome,infoAutoReponse1,infoAutoReponse2,infoAutoReponse3,infoLeave
-
-
- **Security**
-  anti ban [Number]
- anti kick [Number]
- anti channelD [Number]
- anti channelC [Number]
- anti roleD [Number]
- anti roleC [Number]
- anti time [Number]
- antibots [on/off]
- config
-
- **JUST FOR OWNER SHIP**
-
-**Games**
-slots,rps,8ball
-
- **Fun**
- meme,slap,cuddle,kiss,boom,man,girl
- sad,love,hack,dog
-
-[Support Server](https://discord.gg/zqgxs7RJpQ) 
-
-`);
+      `);
     message.channel.send(help);
   }
 });
