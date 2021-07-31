@@ -1135,8 +1135,9 @@ client.on("message", async message => {
 \`>lock - >unlock\`
 \`>clear - >slowmode\`
 \`>lockall - >unlockall\`
-\`>ENrules - >KRrules - >ARrules\`
-\`>warn - >warning - >removewarn\`
+\`>ENrules - >KRrules\`
+\`>ARrules - >warn\`
+\`>warning - >removewarn\`
 
 🛡️**»__ Security __**
 
@@ -1217,7 +1218,7 @@ var Black = new Discord.MessageEmbed()
 message.channel.send(Black);
 }); 
 client.on("message", message => {
-    if (message.content.startsWith(prefix + "rules")) {
+    if (message.content.startsWith(prefix + "KRrules")) {
       if (!message.member.hasPermission("MANAGE_GUILD")) return;
      const blackjack = new Discord.MessageEmbed() 
          .setColor("BLACK")
@@ -1306,7 +1307,7 @@ if (msg.content.startsWith(prefix + "year")){
 }
 })
 client.on("message", message => {
-  if (message.content.startsWith(prefix + "user")) {
+  if (message.content.startsWith(prefix + "userinfo")) {
     if (!message.channel.guild) return;
     let user = message.mentions.users.first();
     var men = message.mentions.users.first();
